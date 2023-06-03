@@ -1,0 +1,68 @@
+
+
+
+
+<app-nav-bar></app-nav-bar>
+
+<!--Admin Login-->
+<div class="container-fluid">
+    <div class="card-body" style="background-color: antiquewhite;">
+        <div class="login">
+
+            <h1 class="text-center">Admin Login</h1>
+            <form #userlogin="ngForm" (ngSubmit)="onSubmit(userlogin.value)">
+                 
+
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email address:</label>
+                    <input type="text" 
+                    class="form-control"  
+                    placeholder="Enter your Email" 
+                    name="email" 
+                    email
+                    ngModel  
+                    #email="ngModel" 
+                    required/>
+                   
+                    <p class="text-danger fw-bold h6" *ngIf="email.invalid && email.touched"> Please enter valid Email</p>
+
+                </div>
+
+
+
+                <br>
+                <div class="form-group">
+                    <label class="form-label" for="password">Password:</label>
+                    <input type="password" 
+                    class="form-control"  
+                    placeholder="Enter your password" 
+                    name="password"  
+                    ngModel 
+                    password 
+                    #password="ngModel" 
+                    minlength="4"
+                    maxlength="20"
+                    required/>
+                    
+                    <p class="text-danger fw-bold h6" *ngIf="password.invalid && password.touched"> Please enter valid Password</p>
+
+                </div>
+
+
+               <br>
+               <div style="text-align:center;">
+                <button class="btn w-50" [disabled]="userlogin.invalid" type="submit">Login</button>
+                <br>
+                <br>
+                <p class="text-danger fw-bold h6" *ngIf="userlogin.valid">{{message}}</p>
+
+            </div>
+
+
+            </form>
+        
+        </div>
+      </div>
+  </div>
+

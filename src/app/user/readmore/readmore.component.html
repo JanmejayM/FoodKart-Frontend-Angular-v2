@@ -1,0 +1,13 @@
+<div [ngClass]="{ 'isCollapsed': !isCollapsed, 'collapsed': isCollapsed }" class="pull-left readMore">
+    <ng-content></ng-content>
+</div>
+<a (click)="isCollapsed = !isCollapsed" [hidden]="!isReadMore" class="pull-right">
+<p *ngIf="isCollapsed"><fa-icon [icon]="downArrow"></fa-icon>
+</p>
+<p *ngIf="!isCollapsed"><fa-icon [icon]="upArrow"></fa-icon></p>
+
+
+
+
+</a>
+<div class='cb'></div>

@@ -1,0 +1,66 @@
+
+
+
+<div class="row" style="background-color:  #ecdcb2b3;">
+
+
+    <div *ngIf="orderArray.length!=0;else elseBlock" class="col col-xs-7 col-sm-6 col-md-5 col-lg-4 mt-3" style=" height: 100vh;
+    overflow:hidden;
+    overflow-y: scroll; ">
+
+        
+        <div *ngFor="let i of orderArray" class="p-2 m-2">
+            <div  class="card">
+                <div class="header">
+                    <div>
+                <button style="padding: 0px;" class="btn btn-light" (click)="show(i)">
+               
+                 {{i.summary}}
+
+                </button>
+                <p class="price">
+                    &#x20b9; {{i.price}}
+                </p>
+              </div>
+                <button class="image" (click)="show(i)">
+                    <fa-icon [icon]="rightArrow" size="lg"></fa-icon>
+                </button>
+            </div >
+              <p class="description" >
+          
+              </p>
+            <dl class="post-info">
+              <div class="cr">
+
+
+                <h5 style="font-weight: 600;"> Location :</h5><dd>{{i.address}}</dd>
+                  <dd class="dd">{{i.calendarDate}}</dd>
+                </div>
+                
+            </dl>
+        </div>
+    </div>
+
+   
+    </div>
+    
+
+    <ng-template #elseBlock ><p class="h1">No Previous Order Found</p>
+    </ng-template>
+
+
+
+    <div *ngIf="orderArray.length!=0 && (orderprice!=0 && order.length!=0)" class="col col-xs-4 col-sm-5 col-md-6 col-lg-7">
+     
+        <app-order-details [orderDetails]="order" [totalPrice]="orderprice"></app-order-details>
+
+
+
+    </div>
+
+
+
+
+   
+
+</div>

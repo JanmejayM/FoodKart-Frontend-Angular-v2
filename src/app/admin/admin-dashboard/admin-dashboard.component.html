@@ -1,0 +1,45 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container-fluid" style="display: flex;flex-direction: column;height: 100%;">
+
+<div class="row">
+<div class="col-12 col-sm-3 col-md-4 col-lg-3">
+    <div >
+
+    </div>
+<a class="btn btn-lg" [routerLink]="[{ outlets: { aux: ['product'] } }]">Product 
+    <fa-icon [icon]="productIcon"></fa-icon>
+
+
+</a>
+<br>
+<a class="btn btn-lg" [routerLink]="[{ outlets: { aux: ['order-revenue'] } }]">
+    Order Revenue
+    <fa-icon [icon]="orderIcon"></fa-icon>
+
+
+</a>
+
+
+<br>
+<a class="btn btn-lg" (click)="logOut()" routerLink="/">
+    Logout
+    <fa-icon [icon]="powerIcon"></fa-icon>
+
+</a>
+</div>
+
+
+
+ <div class="col-12 col-sm-9 col-md-8 col-lg-9" style="overflow-y: scroll;height: 100vh;">
+    <router-outlet name='aux'></router-outlet>
+
+</div> 
+</div>
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+<app-nav-bar></app-nav-bar>
+
+
+
+
+
+
+<div class="container-fluid">
+
+    <div class="card-body">
+        <div class="login">
+
+            <h1 class="text-center">Login</h1>
+            <form #userlogin="ngForm" (ngSubmit)="onSubmit(userlogin.value)">
+                 
+
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email address:</label>
+                    <input type="text" 
+                    class="form-control"  
+                    placeholder="Enter your Email" 
+                    name="username" 
+                    email
+                    ngModel  
+                    #username="ngModel" 
+                    required/>
+                   
+                    <p class="text-danger fw-bold h6" *ngIf="username.invalid && username.touched"> Please enter valid Email</p>
+
+                </div>
+
+
+
+                <br>
+                <div class="form-group">
+                    <label class="form-label" for="password">Password:</label>
+                    <input type="password" 
+                    class="form-control"  
+                    placeholder="Enter your password" 
+                    name="password"  
+                    ngModel 
+                    password 
+                    #password="ngModel" 
+                    minlength="4"
+                    maxlength="20"
+                    required/>
+                    
+                    <p class="text-danger fw-bold h6" *ngIf="password.invalid && password.touched"> Please enter valid Password</p>
+
+                </div>
+
+
+               <br>
+               <div style="text-align:center;">
+                <button class="btn btn-warning w-50" [disabled]="userlogin.invalid" type="submit">Login</button>
+                <br>
+                <br>
+                <p class="text-danger fw-bold h6" *ngIf="userlogin.valid">{{message}}</p>
+
+                <br>
+                <span class="text-dark">New to FoodKart ? <a class="link" routerLink='/signup'>SignUp</a></span>
+
+
+            </div>
+
+
+            </form>
+
+
+        
+        </div>
+      </div>
+  </div>
+
+

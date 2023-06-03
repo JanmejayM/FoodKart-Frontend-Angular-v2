@@ -1,0 +1,35 @@
+div.collapsed {
+    display: -webkit-inline-box;
+    display: inline-block;
+    font-size: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 85%;
+  }
+  
+  .readMore {
+      margin-top: -3px !important;
+      line-height: 1.35 !important;
+  }
+  
+  .isCollapsed {
+      width: 85%;
+  }
+  
+  .cb {
+      clear: both;
+      height: 0;
+  }
+  
+  .pull-right {
+    float: right;
+  }
+  
+  .pull-left {
+    float: left;
+  }
+  
+  a{
+    text-decoration: none;
+  }

@@ -1,0 +1,44 @@
+
+
+
+.navbar-nav{
+    text-align: right;
+}
+ul{
+    text-align: center;
+}
+.navbar.navbar-light{
+    background-color: rgba(255, 255, 255, 1);
+   
+    font-weight: 500;
+}
+
+
+.logo i{
+    padding-right: .5rem;
+    
+  }
+  
+  .navbar a{
+    margin-left: 2rem;
+    color:#666666;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover{
+    color:var(--red);
+  }
+  span {
+    font-size:1.5em;
+  }
+
+  *{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+  box-sizing:border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition:all .1s linear;
+  }

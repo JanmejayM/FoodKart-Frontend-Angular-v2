@@ -1,0 +1,67 @@
+
+<div style="min-width:350px;">
+
+    <div class="text-center">
+        <a class="btn btn-primary btn-lg" (click)="addProductpage()">
+            <fa-icon [icon]="productIcon"></fa-icon>
+            Add a new Product</a>
+
+    </div>
+     
+    <div class="active-cyan-3 active-cyan-4 mb-4 input-group-lg p-2">
+        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search for your Product" aria-label="Search" [(ngModel)]="data" />
+        
+      </div>
+
+    <ul class="card" style="min-width: 400px;">
+
+
+
+
+        
+
+        <hr>
+
+        <li style="list-style: none;" *ngFor="let r of result | filter:data ;">
+
+            <div class="row">
+            
+            <div class="col-4 col-sm-5 col-md-4 col-lg-4">
+                <img class="rounded" style="width: 20vw; height: 20vw;" src={{r.image}}>
+
+
+            </div>
+           
+            <div class="col-4 col-sm-4 col-md-4 col-lg-6">
+            <p class="h4">{{r.name}}</p>
+            <p class="text-muted">{{r.description}}</p>
+            <p>Price: &#x20b9;{{r.price}}</p>
+            </div>
+           
+            <div class="col-4 col-sm-1 col-md-4 col-lg-2">
+                <div class="options">
+                <button class="btn btn-primary" (click)="edit(r.id)">Edit <i class="fa fa-pencil fa-fw" aria-hidden="true"></i></button>
+                <div style="height: 2vw;">
+
+                </div>
+                <button class="btn btn-danger" (click)="del(r)">Delete <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                </div>
+
+                </div>
+            
+            
+            </div>
+            <hr>
+
+           
+
+        </li>
+    </ul>
+
+
+
+
+    
+</div>
+

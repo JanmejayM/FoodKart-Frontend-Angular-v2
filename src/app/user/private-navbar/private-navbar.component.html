@@ -1,0 +1,83 @@
+ <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top p-2">
+  
+    <div class="container-fluid">
+      <a routerLink="/user"><fa-icon [icon]="dispIcon" size="2x" animation="shake" style="color: red;"></fa-icon><span>FoodKart</span></a>
+        
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+          <span class="navbar-toggler-icon"></span>
+          
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="mx-auto"></div>
+
+          <ul class="navbar-nav" style="font-weight: 900;">
+            <li class="nav-item">
+              <a routerLink='/user'><fa-icon [icon]="homeIcon"></fa-icon>
+                Home</a>
+
+            </li>
+            
+           
+
+
+            
+            
+            
+
+
+            <li class="nav-item">
+              <a routerLink='/user/cart'><fa-icon [icon]="cartIcon"></fa-icon>
+              Cart</a>
+              
+            </li>
+
+
+          
+  
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <fa-icon [icon]="userIcon"></fa-icon>  {{name}}
+
+              </a>
+              <div style="text-align:left;" class="dropdown-menu " aria-labelledby="navbarDropdown">
+                
+                <li class=" nav-item py-2">
+
+                  <a  href="/user/account"> Account <fa-icon [icon]="settingIcon"></fa-icon></a>
+                </li>
+
+                <li class=" nav-item pb-2">
+
+                  <a  routerLink='/user/orders'> My Orders <fa-icon [icon]="orderIcon"></fa-icon></a>
+                </li>
+
+                <li class=" nav-item pb-2">
+
+                  <a  routerLink="/user/address"> Address Page </a>
+                </li>
+
+                <li class=" nav-item" >
+                  <a (click)="logOut()" href="#">Logout <fa-icon [icon]="logoutIcon"></fa-icon></a>
+                </li>
+              </div>
+            </li>
+
+
+
+
+
+
+          </ul>
+        </div>
+      </div>
+  </nav> 
+
+ 
+  

@@ -1,0 +1,35 @@
+
+
+<div class="mt-4">
+
+     
+     <table class="table table-bordered table-striped table-hover bg-white" *ngIf="orderDetails!=undefined">
+        <thead>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </thead>
+        <tbody >
+        <tr *ngFor="let i of orderDetails">
+            <td >{{i.name}}</td>
+            <td >{{i.quantity}}</td>
+            <td > <span>&#x20b9; {{i.price}}</span></td>
+        
+        </tr>
+
+        <tr>
+            <td colspan="2" >Total Price</td>
+            <td > &#x20b9;{{totalPrice}}</td>
+        </tr>
+        </tbody>
+       
+   
+
+
+
+
+
+     </table>
+        
+    
+</div>

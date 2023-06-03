@@ -1,0 +1,115 @@
+<app-private-navbar></app-private-navbar>
+
+<body>
+ 
+<div id="home" >
+
+  <div id="carouselExampleIndicators"  class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators" data-ride="carousel">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner" data-bs-interval="1000" >
+      <div class="carousel-item active">
+        <img src="assets/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg" class="d-block w-100" alt="img">
+      </div>
+      <div class="carousel-item" data-bs-interval="1000">
+        <img src="assets/rachel-park-hrlvr2ZlUNk-unsplash.jpg" class="d-block w-100" alt="img">
+      </div>
+      <div class="carousel-item" data-bs-interval="1000">
+        <img src="assets/brooke-lark-aGjP08-HbYY-unsplash.jpg" class="d-block w-100" alt="img">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</div>
+  
+
+<br>
+<br>
+
+<div class="active-cyan-3 active-cyan-4 mb-4 input-group-lg p-2 w-50" style="margin-left: 50%; margin-right: 2%;">
+  
+  <input class="form-control my-0 py-1 red-border" type="search" placeholder="Search..." aria-label="Search.." [(ngModel)]="searchText">
+  <fa-icon [icon]="searchIcon"></fa-icon>
+
+  
+</div>
+
+<div id="speciality">
+
+ 
+<ul style="list-style: none;">
+<div>
+
+
+ 
+   <li *ngFor="let r of result| filter:searchText ;" class="px-5 mx-2 my-2">
+     
+    <div >
+
+      
+      <div class="row mb-4 d-flex justify-content-between align-items-center border rounded" >
+        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2" >
+          <img  class="rounded m-2" style="height: 13rem;width: 15rem;"
+          src={{r.image}}
+          class="img-fluid rounded-3 mx-auto" alt="img">
+        </div>
+        <div class="col-md-3 col-lg-3 col-xl-3">
+          <p class="h3">{{r.name}}</p>
+          <span>
+          <app-readmore [isReadMore]="!isReadMore">
+            {{r.description}}
+          </app-readmore>
+          </span>
+        </div>
+        
+        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+          <h6 class="h5" >&#x20b9; {{r.price}}.00</h6>
+        </div>
+        
+        
+        
+        <div class="col-md-3 col-lg-3 col-xl-2 d-flex" style="justify-content: center;">
+          
+          <button class="btn btn-primary rounded-3" style="padding: 10px;" (click)="addCart(r)" >Add to Cart</button>
+        </div> 
+        
+      </div>
+      
+      
+    </div>
+   </li>
+</div>
+<hr>
+</ul>
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+
+    
+   
+<!--filterCategory | filter:searchKey:'name'-->
+
+<!-- <div>
+  <pagination-controls class="user-pagination"  id="list-id" [maxSize]="maxsize" [directionLinks]="isTrue" (pageChange)="page=$event" [responsive]="isTrue" >
+    
+  </pagination-controls>
+</div> -->

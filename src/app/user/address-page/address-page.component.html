@@ -1,0 +1,89 @@
+
+<div style="background-color: #ecdcb2b3;height: 100vh !important; width: 100vw;">
+<app-private-navbar></app-private-navbar>
+<div class="row" style="width: 100vw;">
+
+    
+   <div class="col-sm-6 col-md-5 col-lg-7 mx-2">
+
+       
+       <form  #formup="ngForm" (ngSubmit)="add(formup.value); formup.resetForm()" class="border border-dark p-5 rounded mx-auto" style="background-color: antiquewhite;" >
+           
+           <p class="h1 text-primary">Address Details</p>
+           <div class="form-group">
+               <label for="House No">House No:</label>
+               <input type="text" class="form-control" name="houseno" ngModel placeholder="House No" required="required">
+            </div>
+            <div class="form-group">
+                <label for="street">Street:</label>
+                <input type="text" class="form-control" name="street" ngModel placeholder="Street" required="required">
+            </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input  type="text" class="form-control" name="city" ngModel placeholder="City" required="required">
+        </div>
+        <div class="form-group">
+            <label for="state">State:</label>
+         <input type="text" class="form-control" name="state" ngModel placeholder="State" required="required">
+        </div>
+        <div class="form-group">
+            <label for="pincode">Pincode :</label>
+            <input type="text" class="form-control" name="pincode" ngModel placeholder="Pincode" required="required">
+        </div>
+        <br>
+        <div style="text-align:center;">
+            <button class="btn btn-primary" type="submit" [disabled]="!formup.valid" >Add Address</button>
+        </div>
+        
+        
+    </form>
+    
+    </div>
+
+
+<div class="col-sm-5 col-md-6 col-lg-4 my-2"  style=" height: 85vh;
+overflow-y: scroll; 
+">
+
+    <div *ngFor="let address of addressArray" style="display: flex; justify-content: center;">
+        
+      
+      <div class="card">
+          <div class="header">
+          <span class="icon">
+            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" fill-rule="evenodd"></path>
+            </svg>
+          </span>
+          
+        </div>
+        
+        <p class="message">
+
+            {{address.houseno}},{{address.street}},{{address.city}},
+            {{address.state}},{{address.pincode}}
+          
+        </p>
+        
+        <div class="actions">
+            <button class="but delete" (click)="deleteAddress(address)" >
+                Delete Address
+            </button>
+            
+           
+        </div>
+    </div>
+    
+    
+</div>
+    
+</div>
+    
+    
+</div>
+</div>    
+    
+    
+    
+    
+
