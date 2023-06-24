@@ -16,15 +16,15 @@ export class CartserviceService {
 
   getById(data:number):Observable<Icart>
   {
-    return this.http.get<Icart>('http://localhost:8081/cart-rest/getCart/'+data.toString())
+    return this.http.get<Icart>('http://localhost:8083/cart-rest/getCart/'+data.toString())
   }
   delete(data:IcartItem)
   {
-    return this.http.post("http://localhost:8081/cart-rest/deleteCartItem",data)
+    return this.http.post("http://localhost:8083/cart-rest/deleteCartItem",data)
   }
   addToCart(data:string)
   {
-    return this.http.get("http://localhost:8081/cart-rest/addCart/"+data)
+    return this.http.get("http://localhost:8083/cart-rest/addCart/"+data)
   }
 
   

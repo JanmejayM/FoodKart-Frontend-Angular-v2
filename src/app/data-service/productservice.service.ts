@@ -60,7 +60,7 @@ export class ProductserviceService {
       description:string,
       image:string,
       price:number
-    }[]>('http://localhost:8081/product-rest/fetch');
+    }[]>('http://localhost:8083/product-rest/fetch');
   }
   addProduct(product:{name:string,
     description:string,
@@ -74,22 +74,22 @@ export class ProductserviceService {
       description:string,
       image:string,
       price:number
-    }>('http://localhost:8081/product-rest/add',product);
+    }>('http://localhost:8083/product-rest/add',product);
 
   }
   deleteProduct(data:number)
   {
-    return this.http.delete("http://localhost:8081/product-rest/delete/"+data.toString());
+    return this.http.delete("http://localhost:8083/product-rest/delete/"+data.toString());
   }
 
   getProductById(data:number): Observable<Iproduct[]>
   {
-    return this.http.get<Iproduct[]>('http://localhost:8081/product-rest/fetch/'+data.toString());
+    return this.http.get<Iproduct[]>('http://localhost:8083/product-rest/fetch/'+data.toString());
   } 
 
   updateProduct(product:Iproduct)
 {
-  return this.http.put<Iproduct[]>('http://localhost:8081/product-rest/update',product);
+  return this.http.put<Iproduct[]>('http://localhost:8083/product-rest/update',product);
 }
 
 

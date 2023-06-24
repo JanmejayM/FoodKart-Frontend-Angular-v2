@@ -15,18 +15,15 @@ export class UserserviceService {
   signup=(data:Iuser)=>
   {
    
-    return this.http.post<Iuser>('http://localhost:8080/login-rest/signup',data);
+    return this.http.post<Iuser>('http://localhost:8083/login-rest/signup',data);
   }
 
   login=(data:{username:string,password:string})=>{
-    return this.http.post<Iuser>('http://localhost:8080/login-rest/login',data);
+    return this.http.post<Iuser>('http://localhost:8083/login-rest/login',data);
 
   }
 
-  deleteUser(data:number)
-  {
-    return this.http.delete("http://localhost:8080/login-rest/del/"+data.toString());
-  }
+  
 
  
 }

@@ -14,23 +14,23 @@ export class CartItemserviceService {
 
   addProductToCartItem(product:Iproduct,userid:number)
   {
-    return this.http.post("http://localhost:8081/cartitem-rest/addProduct/"+userid.toString(),product);
+    return this.http.post("http://localhost:8083/cartitem-rest/addProduct/"+userid.toString(),product);
   }
 
   
 
   updateQty(c:IcartItem)
   {
-    return this.http.put("http://localhost:8081/cartitem-rest/updateQty",c);
+    return this.http.put("http://localhost:8083/cartitem-rest/updateQty",c);
   }
 
   deleteItem(c:IcartItem)
   {
-    return this.http.post("http://localhost:8081/cartitem-rest/delete",c);
+    return this.http.post("http://localhost:8083/cartitem-rest/delete",c);
 
   }
   checkOut(userid:number,cartitems:IcartItem[])
   {
-    return this.http.post("http://localhost:8081/cartitem-rest/onCheckout/"+userid.toString(),cartitems)
+    return this.http.post("http://localhost:8083/cartitem-rest/onCheckout/"+userid.toString(),cartitems)
   }
 }
